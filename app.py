@@ -47,8 +47,8 @@ def webhook():
                 #msg = messaging_event["message"]["text"]  # the message's text
                 log(messaging_event.get("message"))
                 for text in messaging_event["message"]:
-                    log("For in")
-                    if text.get("text"):
+                    log("For in" + text)
+                    if text in "text":
                         log("in if 1")
                         msg = "welcome"
                         process_message(msg,sender_id)
