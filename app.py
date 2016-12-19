@@ -30,9 +30,11 @@ def webhook():
 
     # endpoint for processing incoming messaging events
     data = request.get_json()
-
-    log("Thala Hari " + data)  # you may not want to log every incoming message in production, but it's good for testing
-
+    
+    log("maui hari Start")
+    log(data)  # you may not want to log every incoming message in production, but it's good for testing
+    log("maui hari End")
+    
     #if data["object"] == "page":
 
     for entry in data["entry"]:
@@ -42,6 +44,7 @@ def webhook():
             recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
             if messaging_event.get("message"):  # someone sent us a message
                 #msg = messaging_event["message"]["text"]  # the message's text
+                log("in if 1")
                 log("Ashok Log" + messaging_event["message"]["text"])
                 msg = "welcome"
                 process_message(msg,sender_id)
