@@ -507,7 +507,7 @@ def send_message(recipient_id, message_text):
                 "id": recipient_id
             },
             "message": {
-                "text": "Login successfully"
+                "text": "Please enter 4 digit OTP"
             }
         })
         
