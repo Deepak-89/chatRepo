@@ -496,9 +496,21 @@ def send_message(recipient_id, message_text):
                 "id": recipient_id
             },
             "message": {
-                "text": "login successfully"
+                "text": "Please Enter Your Mobile number:"
+               
+            }
+           
+        })
+    elif "phone" in message_text:
+        data = json.dumps({
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "text": "Login successfully"
             }
         })
+        
     else:
         data = json.dumps({
             "recipient": {
@@ -545,6 +557,11 @@ def process_message(text,sender_id):
                     if 'locat' in str(words).lower() or 'find' in str(words).lower() or 'search' in str(words).lower():
                         output="branch_locate"
                 elif(ps.stem(w).lower()=='login'):
+                        output="login_menu"
+                elif(ps.stem(w).lower().isdigit()):
+                     if(len(str(ps.stem(w)))==10):
+                        output="phone"
+                     else:
                         output="login_menu"
         send_message(sender_id, output)
 
