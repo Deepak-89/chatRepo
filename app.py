@@ -39,12 +39,9 @@ def webhook():
         for messaging_event in entry["messaging"]:
 
             sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
-            recipient_id = messaging_event["recipient"]["id"]
-            log("HelloRecipient" + recipient_id)
-            log("Messagr log" + messaging_event["message"]["text"])# the recipient's ID, which should be your page's facebook ID
+            recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
             if messaging_event.get("message"):  # someone sent us a message
-##                msg = messaging_event["message"]["text"]  # the message's text
-                msg="Welcome"
+                msg = messaging_event["message"]["text"]  # the message's text
                 process_message(msg,sender_id)
 
             if messaging_event.get("delivery"):  # delivery confirmation
@@ -499,9 +496,21 @@ def send_message(recipient_id, message_text):
                 "id": recipient_id
             },
             "message": {
-                "text": "login successfully"
+                "text": "Please Enter Your Mobile number:"
+               
             }
+           
         })
+##    elif "phone" in message_text:
+##        data = json.dumps({
+##            "recipient": {
+##                "id": recipient_id
+##            },
+##            "message": {
+##                "text": "Login successfully"
+##            }
+##        })
+##        
     else:
         data = json.dumps({
             "recipient": {
@@ -549,6 +558,9 @@ def process_message(text,sender_id):
                         output="branch_locate"
                 elif(ps.stem(w).lower()=='login'):
                         output="login_menu"
+              
+                        
+                    
         send_message(sender_id, output)
 
 
