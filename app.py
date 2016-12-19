@@ -518,16 +518,16 @@ def send_message(recipient_id, message_text):
                 "text": "Please enter the 4 digit OTP"
             }
         })
-##    elif "phone" in message_text:
-##        data = json.dumps({
-##            "recipient": {
-##                "id": recipient_id
-##            },
-##            "message": {
-##                "text": "Login successfully"
-##            }
-##        })
-##        
+    elif "otp" in message_text:
+        data = json.dumps({
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "text": "OTP verified, Welcome !"
+            }
+        })
+        
     else:
         data = json.dumps({
             "recipient": {
@@ -571,6 +571,8 @@ def process_message(text,sender_id):
                 elif(ps.stem(w).lower().isdigit()):
                         if(len(str(ps.stem(w)))==10):
                             output="phone"
+                        elif(len(str(ps.stem(w)))==4)
+                            output="otp"
                         else:
                             output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
                 elif(ps.stem(w).lower()=='branch' or ps.stem(w).lower()=='atm'):
