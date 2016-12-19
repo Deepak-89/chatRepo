@@ -45,12 +45,12 @@ def webhook():
             if messaging_event.get("message"):  # someone sent us a message
                 for text in messaging_event["message"]:
                     log("ext val" + text)
-                    if text in "text":
-                        log("in if 1")
+                    if text.text != None:
                         msg = messaging_event["message"]["text"]  # the message's text
                         process_message(msg,sender_id)
                     else:
                         log("in else")
+                        msg = "Please Enter Value"
 
             if messaging_event.get("delivery"):  # delivery confirmation
                 pass
