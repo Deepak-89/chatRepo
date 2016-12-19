@@ -65,7 +65,7 @@ def send_message(recipient_id, message_text):
     waitForAMoment = json.dumps({"recipient": {"id": recipient_id },"message":"Please wait for a moment."})
 
     params = {
-        "access_token": 'EAAaMfUeJTDoBAPGLvJuC3F8Jy2ZB57LKpuDO1FnkD4oNVZA5hnH31XNj8XCPZAAVZCYgQnexWntXaITv8LEkAni10Ag0ovLJnkOiZAkI2pX0dDQf3AZCx1ZCjGiwQTYR6vPXbGTsBg3MqH0aWqnlonufX8rIIGFMqr7ZCAi6zaZCPZCbQ3mz9W7dI3'
+        "access_token": 'EAAaMfUeJTDoBANnMGiZCwSZAgzZBhPlS6c7r9ZAH5QtJ3gUzMyqA55g2rMzWfNbreA3j6GU4ZByBLWV4Ajj4zXHZBAfZBZCwIZAEuslqdka6te8gE8BhWJHXniA9gqdI8nbPOvAiJIfi41VZB6On6AnE70aZCzxRZAG9i2gSqEg2cH5L3EVBXFfajtW1'
     }
     headers = {
         "Content-Type": "application/json"
@@ -496,21 +496,9 @@ def send_message(recipient_id, message_text):
                 "id": recipient_id
             },
             "message": {
-                "text": "Please Enter Your Mobile number:"
-               
-            }
-           
-        })
-    elif "phone" in message_text:
-        data = json.dumps({
-            "recipient": {
-                "id": recipient_id
-            },
-            "message": {
-                "text": "Please enter 4 digit OTP"
+                "text": "login successfully"
             }
         })
-        
     else:
         data = json.dumps({
             "recipient": {
@@ -552,20 +540,12 @@ def process_message(text,sender_id):
                 elif(ps.stem(w).lower()=='balance_check'):
                         output="balance_check"
                 elif(ps.stem(w).lower().isdigit()):
-                        if(len(str(ps.stem(w)))==10):
-                            output="phone"
-                        else:
-                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
+                        output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
                 elif(ps.stem(w).lower()=='branch' or ps.stem(w).lower()=='atm'):
                     if 'locat' in str(words).lower() or 'find' in str(words).lower() or 'search' in str(words).lower():
                         output="branch_locate"
                 elif(ps.stem(w).lower()=='login'):
                         output="login_menu"
-                #elif(ps.stem(w).lower().isdigit()):
-                 #    if(len(str(ps.stem(w)))==10):
-                  #      output="phone"
-                   #  else:
-                    #    output="login_menu"
         send_message(sender_id, output)
 
 
