@@ -71,7 +71,7 @@ def send_message(recipient_id, message_text):
     waitForAMoment = json.dumps({"recipient": {"id": recipient_id },"message":"Please wait for a moment."})
 
     params = {
-        "access_token": 'EAAaMfUeJTDoBAMRi2gsnTbArbLJ4ygFFTZCFcfKp6VawnxIHRdvTQr1Lkn4TDXGJ94B6Kxl7b5cvs6HrqOvBi3adbTzbz8U7MuUh8VsjhX2cr4ONj8gjMYnNMxFn7oEf7ysAYQ0UZCA15ppADhd9YEP1mtrRxhJlrCkYRdofkXg8XfIKjC'
+        "access_token": 'EAAENgU0EDH4BAFAFjOyiVUEH9HB1Pn1bLEc3pHH96ZBf9aZCZA38GvxcKKoQYTznyC7DUCcxrnYiKVRsZCN7wZBGPjV7UNuxPxar4t7lwc19z6ckA1o4VYzpKJivi6MU9bC5jVFLPA72C5hDLXQfZCHdoxZCyIS55c7n9ez23eOiHJHpEBN9cpN'
     }
     headers = {
         "Content-Type": "application/json"
@@ -569,7 +569,7 @@ def process_message(text,sender_id):
                 elif(ps.stem(w).lower().isdigit()):
                         if(len(str(ps.stem(w)))==10):
                             output="phone"
-                        elif(len(str(ps.stem(w)))==4 and str(ps.stem(w))=="7896")
+                        elif(len(str(ps.stem(w)))==4 and str(ps.stem(w))=="7896"):
                             output="otp"
                         else:
 ##                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
