@@ -567,12 +567,13 @@ def process_message(text,sender_id):
                 elif(ps.stem(w).lower()=='balance_check'):
                         output="balance_check"
                 elif(ps.stem(w).lower().isdigit()):
-                        if(len(str(ps.stem(w)))==10):
+                        c=len(str(ps.stem(w)))
+                        if(c==10):
                             output="phone"
-                        elif(len(str(ps.stem(w)))==4 and str(ps.stem(w))=="7896"):
+                        elif(c==4 and str(ps.stem(w))=="7896"):
                             output="otp"
                         else:
-                            if(len(str(ps.stem(w)))<10 and len(str(ps.stem(w))>4)):
+                            if(10 < c < 4):
 ##                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
                                 output="Invalid Phone"
                             else:
