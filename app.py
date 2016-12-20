@@ -527,7 +527,7 @@ def send_message(recipient_id, message_text):
                 "id": recipient_id
             },
             "message": {
-                "text": "Welcome !"+sender_id+"You are logged Successfully"
+                "text": "Welcome !You are logged Successfully"
             }
         })
         
