@@ -105,6 +105,11 @@ def send_message(recipient_id, message_text):
                                 "type":"postback",
                                 "title":"Card Operations",
                                 "payload":"card_operations"
+                              },
+                              {
+                                "type":"postback",
+                                "title":"Login",
+                                "payload":"login_menu"
                               }
                             ]
                         },
@@ -522,7 +527,7 @@ def send_message(recipient_id, message_text):
                 "id": recipient_id
             },
             "message": {
-                "text": "OTP verified, Welcome !"
+                "text": "Welcome !"+sender_id+"You are logged Successfully"
             }
         })
         
@@ -592,5 +597,7 @@ def log(message):  # simple wrapper for logging to stdout on heroku
     sys.stdout.flush()
 
 if __name__ == '__main__':
+    app.run(debug=True)
+
     app.run(debug=True)
 
