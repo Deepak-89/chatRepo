@@ -573,7 +573,7 @@ def process_message(text,sender_id):
                         elif(c==4 and str(ps.stem(w))=="7896"):
                             output="otp"
                         else:
-                            if(10 < c < 4):
+                            if(c > 4 and c < 10):
 ##                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
                                 output="Invalid Phone"
                             else:
