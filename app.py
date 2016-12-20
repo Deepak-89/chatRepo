@@ -44,13 +44,11 @@ def webhook():
             recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
             if messaging_event.get("message"):  # someone sent us a message
                 for text in messaging_event["message"]:
-                    log("ext val" + text)
+##                    log("ext val" + text)
                     if text in "text":
-                        log("in if 1")
+##                        log("in if 1")
                         msg = messaging_event["message"]["text"]  # the message's text
                         process_message(msg,sender_id)
-                    else:
-                        log("in else")
 
             if messaging_event.get("delivery"):  # delivery confirmation
                 pass
@@ -571,10 +569,11 @@ def process_message(text,sender_id):
                 elif(ps.stem(w).lower().isdigit()):
                         if(len(str(ps.stem(w)))==10):
                             output="phone"
-                        elif(len(str(ps.stem(w)))==4)
+                        elif(len(str(ps.stem(w)))==4 and str(ps.stem(w))=="7896")
                             output="otp"
                         else:
-                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
+##                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
+                              output="Invalid OTP"
                 elif(ps.stem(w).lower()=='branch' or ps.stem(w).lower()=='atm'):
                     if 'locat' in str(words).lower() or 'find' in str(words).lower() or 'search' in str(words).lower():
                         output="branch_locate"
