@@ -572,8 +572,11 @@ def process_message(text,sender_id):
                         elif(len(str(ps.stem(w)))==4 and str(ps.stem(w))=="7896"):
                             output="otp"
                         else:
+                            if(len(str(ps.stem(w)))<10 and str(ps.stem(w))>4):
 ##                            output="Please find the details here: https://www.usbank.com/locations/locator-results.html?stringquery="+ps.stem(w)+"&branch=y&atm=y"
-                              output="Invalid OTP"
+                                output="Invalid Phone"
+                            else:
+                                output="Invalid OTP"
                 elif(ps.stem(w).lower()=='branch' or ps.stem(w).lower()=='atm'):
                     if 'locat' in str(words).lower() or 'find' in str(words).lower() or 'search' in str(words).lower():
                         output="branch_locate"
@@ -589,3 +592,4 @@ def log(message):  # simple wrapper for logging to stdout on heroku
 
 if __name__ == '__main__':
     app.run(debug=True)
+
