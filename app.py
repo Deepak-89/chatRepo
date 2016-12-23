@@ -71,7 +71,7 @@ def send_message(recipient_id, message_text):
     waitForAMoment = json.dumps({"recipient": {"id": recipient_id },"message":"Please wait for a moment."})
 
     params = {
-        "access_token": 'EAARneTfc3AYBAG8cRSdlJbhbZA4wPCPccH1c323gpZBS06zubgiteGVfcOYyfHIfC0ZASNepVZChacNZA9vTN87PfDFQTFdYl2SxdC4f1Uu2zEajoYOZANkO5AHbThzYlVlVbgZATglEtFh8FwG7gb0ZCZCllmpBdZCtHjA84FU6A1oqAp1ILvQQ1u'
+        "access_token": 'EAARneTfc3AYBAMYpPvA93GqYWng0RCkBLWmbLH1WzhpKthsmmVPsEUCv3E7ghs7EGooo4s2aCZAX6HwZCxArzfcYanRDmff7qwErpqjvTNxscqju6ZBkKv3iZCppkWQCEmGZBwHdhK7hb3sP92jfzKzG1i78ed6WvtJZAEEsTAcX5kh0yTwqDW'
     }
     headers = {
         "Content-Type": "application/json"
