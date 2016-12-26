@@ -105,10 +105,6 @@ def send_message(recipient_id, message_text):
                                 "type":"postback",
                                 "title":"Card Operations",
                                 "payload":"card_operations"
-                              },
-                              {
-                                  "type":"account_link",
-                                  "title":"Log In"
                               }
 ##                              {
 ##                                "type":"postback",
@@ -602,3 +598,5 @@ def log(message):  # simple wrapper for logging to stdout on heroku
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
