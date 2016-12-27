@@ -92,11 +92,6 @@ def send_message(recipient_id, message_text):
                             "subtitle":"Please type your question or choose from the below option or slide right for more options.",
                             "buttons":[
                               {
-                                "type":"account_link",
-                                "title":"Log In",
-                                "url": "https://www.usbank.com/index.html"
-                              },
-                              {
                                 "type":"postback",
                                 "title":"Balance Check",
                                 "payload":"balance_check"
@@ -603,6 +598,8 @@ def log(message):  # simple wrapper for logging to stdout on heroku
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
 
 
 
