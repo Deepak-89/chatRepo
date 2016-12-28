@@ -524,7 +524,7 @@ def send_message(recipient_id, message_text):
 ##                                "title":"Log In",
 ##                                "url":"https://logapp.herokuapp.com/login.php"
                                   "type":"web_url",
-                                  "url":"https://www.flipkart.com/",
+                                  "url":"https://logapp.herokuapp.com/login.php",
                                   "title":"View Item",
                                   "webview_height_ratio": "compact"
                              }
