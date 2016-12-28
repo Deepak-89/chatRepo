@@ -556,6 +556,31 @@ def send_message(recipient_id, message_text):
 ##            }
            
         })
+    elif "log_out" in message_text:
+        data = json.dumps({
+            "recipient":{  
+              "id":sender_id
+            },
+            "message":{  
+              "attachment":{  
+                 "type":"template",
+                 "payload":{  
+                 "template_type":"generic",
+              "elements":[  
+               {  
+                  "title":"Logout",
+                  
+                  "buttons":[  
+                     {  
+                        "type":"account_unlink"
+                     }
+                  ]
+                }
+                ]
+              }
+            }
+          }
+       })
     elif "phone" in message_text:
         data = json.dumps({
             "recipient": {
@@ -632,6 +657,9 @@ def process_message(text,sender_id):
                         output="branch_locate"
                 elif(ps.stem(w).lower()=='login'):
                         output="login_menu"
+                elif(ps.stem(w).lower()=='log'):
+                    if 'me' in str(words).lower() and 'out' in str(words).lower():
+                        output="log_out"
                 send_message(sender_id, output)
 
 
