@@ -520,9 +520,13 @@ def send_message(recipient_id, message_text):
                          "title":"Please Login Here:",
                          "buttons":[
                              {
-                                "type":"account_link",
-                                "title":"Log In",
-                                "url":"https://logapp.herokuapp.com/login.php"
+##                                "type":"account_link",
+##                                "title":"Log In",
+##                                "url":"https://logapp.herokuapp.com/login.php"
+                                  "type":"web_url",
+                                  "url":"https://www.flipkart.com/",
+                                  "title":"View Item",
+                                  "webview_height_ratio": "compact"
                              }
                          ]
                       }
@@ -618,8 +622,3 @@ def log(message):  # simple wrapper for logging to stdout on heroku
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
