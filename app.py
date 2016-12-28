@@ -506,34 +506,54 @@ def send_message(recipient_id, message_text):
             "recipient": {
                 "id": recipient_id
             },
+            "message":{  
+              "attachment":{  
+                 "type":"template",
+              "payload":{  
+                 "template_type":"generic",
+                 "elements":[  
+                  {  
+                      "title":"If you are an existing client, please logon for bot banking.",
+##                      "image_url":"https://chatbot-trialchatbot.rhcloud.com/SpringMVCloginExample/resources/images/bank-logo.png",
+                      "buttons":[  
+                     {  
+                        "type":"account_link",
+                        "url":"https://logapp.herokuapp.com/login.php"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
 ##            "message": {
 ##                "text": "Please Enter Your Mobile number:"
 ##               
 ##            }
-              "message": {
-                "attachment":{
-                  "type":"template",
-                  "payload":{
-                    "template_type":"generic",
-                    "elements":[
-                     {
-                         "title":"Please Login Here:",
-                         "buttons":[
-                             {
-##                                "type":"account_link",
-##                                "title":"Log In",
-##                                "url":"https://logapp.herokuapp.com/login.php"
-                                  "type":"web_url",
-                                  "url":"https://logapp.herokuapp.com/login.php",
-                                  "title":"View Item",
-                                  "webview_height_ratio": "compact"
-                             }
-                         ]
-                      }
-                    ]
-                  }
-                }
-            }
+##              "message": {
+##                "attachment":{
+##                  "type":"template",
+##                  "payload":{
+##                    "template_type":"generic",
+##                    "elements":[
+##                     {
+##                         "title":"Please Login Here:",
+##                         "buttons":[
+##                             {
+####                                "type":"account_link",
+####                                "title":"Log In",
+####                                "url":"https://logapp.herokuapp.com/login.php"
+##                                  "type":"web_url",
+##                                  "url":"https://logapp.herokuapp.com/login.php",
+##                                  "title":"View Item",
+##                                  "webview_height_ratio": "compact"
+##                             }
+##                         ]
+##                      }
+##                    ]
+##                  }
+##                }
+##            }
            
         })
     elif "phone" in message_text:
