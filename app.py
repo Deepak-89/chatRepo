@@ -506,9 +506,29 @@ def send_message(recipient_id, message_text):
             "recipient": {
                 "id": recipient_id
             },
-            "message": {
-                "text": "Please Enter Your Mobile number:"
-               
+##            "message": {
+##                "text": "Please Enter Your Mobile number:"
+##               
+##            }
+              "message": {
+                "attachment":{
+                  "type":"template",
+                  "payload":{
+                    "template_type":"generic",
+                    "elements":[
+                     {
+                         "title":"Please Login Here:",
+                         "buttons":[
+                             {
+                                "type":"account_link",
+                                "title":"Log In",
+                                "url":"https://logapp.herokuapp.com/login.php"
+                             }
+                         ]
+                      }
+                    ]
+                  }
+                }
             }
            
         })
@@ -598,7 +618,6 @@ def log(message):  # simple wrapper for logging to stdout on heroku
 
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 
 
