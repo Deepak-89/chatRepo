@@ -559,7 +559,7 @@ def send_message(recipient_id, message_text):
     elif "log_out" in message_text:
         data = json.dumps({
             "recipient":{  
-              "id":sender_id
+              "id":recipient_id
             },
             "message":{  
               "attachment":{  
