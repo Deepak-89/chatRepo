@@ -519,7 +519,7 @@ def send_message(recipient_id, message_text):
                      {  
                         "type":"account_link",
                         "url":"https://logapp.herokuapp.com/login.php"
-                        "webview_height_ratio":"tall"
+                       
                      }
                   ]
                }
