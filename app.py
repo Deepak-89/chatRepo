@@ -98,7 +98,7 @@ def send_message(recipient_id, message_text):
                               },
                                {"type":"postback",
                                 "title":"Simple Dollar Loan",
-                                "payload":"SDL"
+                                "payload":"sdl"
                               },
 
                               {
@@ -142,7 +142,7 @@ def send_message(recipient_id, message_text):
                 }
             }
         })
-        elif "SDL" in message_text:
+        elif "sdl" in message_text:
         data = json.dumps({
             "recipient": {
                 "id": recipient_id
@@ -680,6 +680,8 @@ def process_message(text,sender_id):
                             output="transaction_receipt"
                 elif(ps.stem(w).lower()=='balance_check'):
                         output="balance_check"
+                elif(ps.stem(w).lower()=='sdl'):
+                         output="sdl"
                 elif(ps.stem(w).lower().isdigit()):
                         c=len(str(ps.stem(w)))
                         if(c==10):
