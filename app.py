@@ -128,6 +128,17 @@ def send_message(recipient_id, message_text):
                               }]
                         },
                         {
+                             "title":"Simple Dollar Loan",
+                              "subtitle":"Simple Dollar Loan",
+                             "buttons":[
+                              {
+                                "type":"postback",
+                                "title":"Simple Dollar Loan",
+                                "payload":"sdl"
+                              }
+                            ]  
+                         },
+                        {
                             "title":"Connect with Live Agent",
                             "subtitle":"A live agent will assist you for your queries",
                             "buttons":[
@@ -657,7 +668,7 @@ def send_message(recipient_id, message_text):
 
 def process_message(text,sender_id):
         text=text.lower()
-        ##output="Level-1-Menu"
+        output="Level-1-Menu"
         ps = PorterStemmer()
         words=word_tokenize(text)
         tokens=nltk.word_tokenize(text)
