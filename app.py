@@ -96,6 +96,11 @@ def send_message(recipient_id, message_text):
                                 "title":"Balance Check",
                                 "payload":"balance_check"
                               },
+                               {"type":"postback",
+                                "title":"Simple Dollar Loan",
+                                "payload":"SDL"
+                              },
+
                               {
                                 "type":"postback",
                                 "title":"Transaction History",
@@ -132,6 +137,39 @@ def send_message(recipient_id, message_text):
                                 "payload":"live_agent_connect"
                               }]
                         }
+                    ]
+                  }
+                }
+            }
+        })
+        elif "SDL" in message_text:
+        data = json.dumps({
+            "recipient": {
+                "id": recipient_id
+            },
+            "message": {
+                "attachment":{
+                  "type":"template",
+                  "payload":{
+                    "template_type":"generic",
+                    "elements":[
+                     {
+                        "title":"Thanks for Showing interest in Simple Dollar Loan. You are eligible for loan up to $500",
+                        "subtitle":"Simple Dollar Loan:",
+                        "buttons":[
+                          {
+                            "type":"postback",
+                            "title":"$100",
+                            "payload":"One_Hundred_dollar"
+                          },
+                          {
+                            "type":"postback",
+                            "title":"$200",
+                            "payload":"Two_Hundred_dollar"
+                          }
+                          
+                        ]
+                     }
                     ]
                   }
                 }
@@ -174,6 +212,7 @@ def send_message(recipient_id, message_text):
                 }
             }
         })
+        
 
     elif "transaction_history_2" in message_text:
         data = json.dumps({
